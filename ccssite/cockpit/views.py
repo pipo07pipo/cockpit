@@ -36,3 +36,10 @@ def index(request):
             break
         i += 1
     return HttpResponse("Load gitpw32")
+
+def table(request):
+    data = Production.objects.all()
+    context = {
+            'data': data
+    }
+    return render(request, 'cockpit/table.html', context=context)
