@@ -70,7 +70,7 @@
         <div class="right_col" role="main">
           <div class="page-title">
             <div class="title_left green">
-              <h3><i class="fa fa-table"></i> Production | Data Table</h3>
+              <h3><i class="fa fa-bar-chart-o"></i> Production | Chart</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -79,7 +79,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
               <!-- xxx -->
-              
+              <canvas id="month-bar"></canvas>
               <!-- xxx -->
             </div>
           </div>
@@ -153,6 +153,76 @@
     <script src="{% static "vendors/jszip/dist/jszip.min.js" %}"></script>
     <script src="{% static "vendors/pdfmake/build/pdfmake.min.js" %}"></script>
     <script src="{% static "vendors/pdfmake/build/vfs_fonts.js" %}"></script>
+
+    <!-- Chart.js -->
+    <script src="{% static "vendors/Chart.js/dist/Chart.min.js" %}"></script>
+
+    <!-- ECharts -->
+    <script src="{% static "vendors/echarts/dist/echarts.min.js" %}"></script>
+    <!-- <script src="{% static "vendors/echarts/map/js/world.js" %}"></script> -->
+
+    <script>
+    var ctx = document.getElementById('month-bar').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'October', 'November', 'December'],
+            datasets: [
+                {
+                    label: "CT",
+                    backgroundColor: "rgba(255,224,230,0.5)",
+                    borderColor: "rgba(225,99,132,1)",
+                      borderWidth: 1,
+                      data: [26386.20]
+                  },
+                  {
+                      label: "CU",
+                      backgroundColor: "rgba(255,236,217,0.5)",
+                    borderColor: "rgba(225,159,64,1)",
+                    borderWidth: 0.5,
+                    data: [50179.83,74259.75,52837.69,37718.95,34988.62,34974.43,8110.00,18580.00]
+                },
+                {
+                    label: "HD",
+                    backgroundColor: "rgba(255,245,221,0.5)",
+                    borderColor: "rgba(225,205,86,1)",
+                    borderWidth: 0.5,
+                    data: [794.07,12580.92,3247.71,3323.50,20782.44,1038.11,407.74,2786.24]
+                },
+                {
+                    label: "MA",
+                    backgroundColor: "rgba(219,242,242,0.5)",
+                    borderColor: "rgba(125,209,209,1)",
+                    borderWidth: 0.5,
+                    data: [0,0,0,0,0,1338.00]
+                },
+                {
+                    label: "MS",
+                    backgroundColor: "rgba(215,236,251,0.5)",
+                    borderColor: "rgba(84,176,238,1)",
+                    borderWidth: 0.5,
+                    data: [156.37,288.00,1400.00]
+                },
+                {
+                    label: "OE",
+                    backgroundColor: "rgba(235,224,255,0.5)",
+                    borderColor: "rgba(182,145,255,1)",
+                    borderWidth: 0.5,
+                    data: [16700.00,13600.00,30000.00,7800.00,14041.34]
+
+                },
+                {
+                    label: "RM",
+                    backgroundColor: "rgba(244,245,245,0.5)",
+                    borderColor: "rgba(215,217,219,1)",
+                    borderWidth: 0.5,
+                    data: [41143688.37,22432422.09,33286613.21,31471614.72,23042657.31,24486429.29,24758513.04,7840871.94]
+                }
+            ]
+        },
+        options: {}
+    });
+    </script>
 
   </body>
 </html>
