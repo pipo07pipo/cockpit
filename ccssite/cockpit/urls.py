@@ -8,6 +8,7 @@ from . import views
 urlpatterns = [
     # ex: /polls/
     path('load/', views.load, name='load'),
-    path('', views.index, name='index'),
+    path('production_table', views.p_table, name='index'),
+    path('production_chart/', views.p_chart, name='chart'),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }),
 ]+ static(settings.MEDIA_URL, serve, document_root=settings.MEDIA_ROOT)

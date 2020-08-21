@@ -39,9 +39,16 @@ def load(request):
         i += 1
     return HttpResponse("Load gitpw32")
 
-def index(request):
+def p_table(request):
     data = Production.objects.all()
     context = {
             'productions': data
     }
-    return render(request, 'cockpit/index.html', context)
+    return render(request, 'cockpit/production_table.html', context)
+
+def p_chart(request):
+    data = Production.objects.all()
+    context = {
+            'productions': data
+    }
+    return render(request, 'cockpit/production_chart.html', context)
