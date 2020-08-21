@@ -44,4 +44,4 @@ def index(request):
     context = {
             'production': data
     }
-    return render(request, 'rfqsite/index.html', context)
+    return render(request, 'cockpit/index.html', context)
