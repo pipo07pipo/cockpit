@@ -123,19 +123,26 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>6/2/2020</td>
-                        <td>2/1/2020</td>
-                        <td>3000</td>
-                        <td>RM-STD-ASSY-012624</td>
-                        <td>MCMASTER CARR, 92865A354</td>
-                        <td>MS</td>
-                        <td>261</td>
-                        <td>-4.500</td>
-                        <td>PC</td>
-                        <td>-90.48</td>
-                      </tr>
+                      {% for prod in productions %}
+                        <tr>
+                          <td>{{ prod.id }}</td>
+                          <td>{{ prod.document_date }}</td>
+                          <td>{{ prod.posting_date }}</td>
+                          <td>{{ prod.plant }}</td>
+                          <td>{{ prod.material }}</td>
+                          <td>{{ prod.material_description }}</td>
+                          <td>{{ prod.movement_type }}</td>
+                          <td>{{ prod.cqe_1 }}</td>
+                          <td>{{ prod.cqe_2 }}</td>
+                          <td>{{ prod.que_1 }}</td>
+                          <td>{{ prod.que_2 }}</td>
+                          <td>{{ prod.ue }}</td>
+                          <td>{{ prod.alc_1 }}</td>
+                          <td>{{ prod.type }}</td>
+                          <td>{{ prod.week }}</td>
+                          <td>{{ prod.alc_2 }}</td>
+                        </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
