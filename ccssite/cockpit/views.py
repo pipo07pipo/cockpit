@@ -42,6 +42,6 @@ def load(request):
 def index(request):
     data = Production.objects.all()
     context = {
-            'production': data
+            'productions': data
     }
     return render(request, 'cockpit/index.html', context)
