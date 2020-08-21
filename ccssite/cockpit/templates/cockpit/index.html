@@ -127,8 +127,8 @@
                       {% for prod in productions %}
                         <tr>
                           <td>{{ prod.id }}</td>
-                          <td>{{ prod.document_date }}</td>
-                          <td>{{ prod.posting_date }}</td>
+                          <td>{{ prod.document_date|date:"N j, Y" }}</td>
+                          <td>{{ prod.posting_date|date:"N j, Y"  }}</td>
                           <td>{{ prod.plant }}</td>
                           <td>{{ prod.material }}</td>
                           <td>{{ prod.material_description }}</td>
