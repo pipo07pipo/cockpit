@@ -119,6 +119,7 @@
                         <th>Count Qty in Un. of Entry</th>
                         <th>Qty in Un. of Entry</th>
                         <th>Unit of Entry</th>
+                        <th>Type</th>
                         <th>Amount in LC</th>
                       </tr>
                     </thead>
@@ -133,13 +134,9 @@
                           <td>{{ prod.material_description }}</td>
                           <td>{{ prod.movement_type }}</td>
                           <td>{{ prod.cqe_1 }}</td>
-                          <td>{{ prod.cqe_2 }}</td>
-                          <td>{{ prod.que_1 }}</td>
                           <td>{{ prod.que_2 }}</td>
                           <td>{{ prod.ue }}</td>
-                          <td>{{ prod.alc_1 }}</td>
                           <td>{{ prod.type }}</td>
-                          <td>{{ prod.week }}</td>
                           <td>{{ prod.alc_2 }}</td>
                         </tr>
                       {% endfor %}
