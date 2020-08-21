@@ -8,6 +8,8 @@ def to_date(serial):
     return datetime.datetime.utcfromtimestamp(seconds)
 
 def index(request):
+    data = Production.objects.all()
+    data.delete()
     workbook = xlrd.open_workbook("gitpw32.xlsx")
     sheet = workbook.sheet_by_index(0)
     i = 0
