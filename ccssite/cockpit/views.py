@@ -7,7 +7,7 @@ def to_date(serial):
     seconds = (float(serial) - 25569) * 86400.0
     return datetime.datetime.utcfromtimestamp(seconds)
 
-def index(request):
+def load(request):
     data = Production.objects.all()
     data.delete()
     workbook = xlrd.open_workbook("gitpw32.xlsx")
@@ -39,9 +39,9 @@ def index(request):
         i += 1
     return HttpResponse("Load gitpw32")
 
-def table(request):
+def index(request):
     data = Production.objects.all()
     context = {
             'data': data
     }
-    return render(request, 'cockpit/table.html', context=context)
+    return render(request, 'cockpit/index.html', context=context)
